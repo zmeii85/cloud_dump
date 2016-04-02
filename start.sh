@@ -13,15 +13,6 @@ echo "-----List of tables Cloud_Client-----"
 echo $tables_cloud_client
 echo ""
 
-#mysql -u root -plmd -e "DROP DATABASE cloud"
-#mysql -u root -plmd -e "DROP DATABASE cloud_client"
-
-# mysql -u $user -p$pass -e "DROP DATABASE cloud"
-# mysql -u $user -p$pass -e "DROP DATABASE cloud_client"
-
-# mysql -u $user -p$pass -e "CREATE DATABASE cloud CHARSET utf8 COLLATE utf8_general_ci"
-# mysql -u $user -p$pass -e "CREATE DATABASE cloud_client CHARSET utf8 COLLATE utf8_general_ci"
-
 mkdir dump
 echo "Dump database CLOUD..."
 mysqldump -h $ip -u $user -p$pass $db --no-autocommit --add-drop-table --extended-insert=false $tables_cloud > dump/cloud_central.sql
